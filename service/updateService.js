@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 const sendUpdateMailService = async function (user) {
   //let myUrl2 = path.join(__dirname, '../images/cis-image.jpeg')
-  let myUrl = "https://fantastic-jersey-tick.cyclic.app/user-create-password/" + user._id;
+  let myUrl = "https://vast-gray-bandicoot-tux.cyclic.app/user-create-password/" + user._id;
   console.log("myUrl value", myUrl)
   //console.log("user id", user._id)
 
