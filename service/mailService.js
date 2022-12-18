@@ -14,15 +14,14 @@ const transporter = nodemailer.createTransport({
 })
 
 const sendMailUser = async function (user) {
-  let myUrl2 = path.join(__dirname, '../images/cis-image.jpeg')
   let myUrl = "https://vast-gray-bandicoot-tux.cyclic.app/user-email-verification/" + user._id;
   console.log("myUrl value", myUrl)
   console.log("user id", user._id)
 
   const mailOptions = {
-    from: 'bmaihlele@gmail.com',
+    from: 'cishourtheme@gmail.com',
     to: user.email,
-    subject: 'Testing',
+    subject: 'CIS Hour Theme',
     html: `<div class="container">
       <p>Hello ${user.name},</p>
         <div class="m-5">
@@ -41,19 +40,14 @@ const sendMailUser = async function (user) {
         <div class="m-5">
           <p>
             If you did not intiate this request, please contact us immediately at
-            <a href="mailto:bmaihlele@gmail.com">bmaihlele@gmail.com</a><br>
+            <a href="mailto:cishourtheme@gmail.com">cishourtheme@gmail.com</a><br>
 
-            Thank You,<br>
-            The Blogger Team
+            Thank You<br>
+            The CIS Hour Team
           </p>
         </div>
-      </div>`,
-    attachments: [{
-      filename: 'photp.jpeg',
-      path: path.join(__dirname, '../images/blogger.png'),
-      cid: 'photo@cis'
-    }]
-
+      </div>`
+    
 
   }
   return await transporter.sendMail(mailOptions);

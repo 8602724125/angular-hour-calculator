@@ -1,15 +1,6 @@
 const mongoose = require("mongoose");
 
-// mongoose.connect('mongodb://localhost:27017/angularJs')
-// mongoose.connect('mongodb+srv://BhupendraMaithele:Pankaj12@cluster0.wlwdnfk.mongodb.net/?retryWrites=true&w=majority')
-
-const url = `mongodb+srv://Pankaj_Maihtele:Pankaj12@cluster0.xfxnakk.mongodb.net/?retryWrites=true&w=majority`;
-
-// const connectionParams={
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-//   useUnifiedTopology: true 
-// }
+const url = `mongodb+srv://Pankaj_Maihtele:Pankaj12@cluster0.xfxnakk.mongodb.net/CIS?retryWrites=true&w=majority`;
 
 
 mongoose.connect(url)
@@ -24,10 +15,15 @@ mongoose.connect(url)
 
 const Schema = mongoose.Schema;
 const adminSchema = new Schema({
+  status: { type: Boolean, default: false},
+  isAuthorised: { type: Boolean, default: true},
+  bio: { type: String, default: "Hi, I am theme selector."},
   name: { type: String, required: true },
-  email: { type: String, unique: true, required: true },
+  email: { type: String, unique: true },
+  profile_photo: { type: String, default: "" },
   password: { type: String, required: true },
-  token: { type: String, default: ''}
+  date: { type: Date, default: Date.now },
+  token: { type: String, default: "" },
 })
 
 

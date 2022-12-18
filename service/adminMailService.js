@@ -15,20 +15,16 @@ const transporter = nodemailer.createTransport({
 
 const sendMailAdmin = async function (user) {
   let myUrl2 = path.join(__dirname, '../images/cis-image.jpeg')
-  //let url = "/home/cis/Node Projects/project using node & angular/images/cis-image.jpeg"
-  // let myUrl = "http://localhost:4200/user-email-verification/" + user._id;
-  // console.log("myUrl value", myUrl)
-  // console.log("user id", user._id)
-
+  
   const mailOptions = {
-    from: 'bmaihlele@gmail.com',
+    from: 'cishourtheme@gmail.com',
     to: user.email,
-    subject: 'Angular Website Testing',
+    subject: 'CIS Hour Team',
     html: `<div class="container">
       <p>Hello ${user.name},</p>
         <div class="m-5">
           </p>
-            You have successfully registered in Blogger website.
+            You have successfully registered as a Admin in CIS Hour website.
             Username: ${user.email}<br>
             Password: ${user.password}
           </p>
@@ -39,19 +35,14 @@ const sendMailAdmin = async function (user) {
         </div>
         <div class="m-5">
           <p>
-            you are intiate by Blogger Team, For any query contact us
+            you are intiate by CIS Hour Team, For any query contact us
             <a href="mailto:bmaihlele@gmail.com">bmaihlele@gmail.com</a><br>
 
             Thank You,<br>
-            The Blogger Team
+            The CIS Hour Team
           </p>
         </div>
-      </div>`,
-    attachments: [{
-      filename: 'photp.jpeg',
-      path: path.join(__dirname, '../images/blogger.png'),
-      cid: 'photo@cis'
-    }]
+      </div>`
 
 
   }
